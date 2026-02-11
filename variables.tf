@@ -25,9 +25,9 @@ EOT
     recovery_vault_name                       = string
     resource_group_name                       = string
     automatic_update = optional(object({
-      authentication_type   = optional(string, "SystemAssignedIdentity")
+      authentication_type   = optional(string) # Default: "SystemAssignedIdentity"
       automation_account_id = optional(string)
-      enabled               = optional(bool, false)
+      enabled               = optional(bool) # Default: false
     }))
   }))
 }
