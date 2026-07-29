@@ -12,8 +12,7 @@ Required:
 Optional:
     - automatic_update (block):
         - authentication_type (optional)
-        - automation_account_id (optional)
-        - enabled (optional)
+        - automation_account_id (required)
 EOT
 
   type = map(object({
@@ -26,8 +25,7 @@ EOT
     resource_group_name                       = string
     automatic_update = optional(object({
       authentication_type   = optional(string)
-      automation_account_id = optional(string)
-      enabled               = optional(bool)
+      automation_account_id = string
     }))
   }))
   validation {

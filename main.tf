@@ -14,7 +14,6 @@ resource "azurerm_site_recovery_protection_container_mapping" "site_recovery_pro
     content {
       authentication_type   = automatic_update.value.authentication_type
       automation_account_id = automatic_update.value.automation_account_id
-      enabled               = automatic_update.value.enabled
     }
   }
 }
