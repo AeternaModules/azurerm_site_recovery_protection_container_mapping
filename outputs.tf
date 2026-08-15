@@ -4,7 +4,7 @@ output "site_recovery_protection_container_mappings_id" {
 }
 output "site_recovery_protection_container_mappings_automatic_update" {
   description = "Map of automatic_update values across all site_recovery_protection_container_mappings, keyed the same as var.site_recovery_protection_container_mappings"
-  value       = { for k, v in azurerm_site_recovery_protection_container_mapping.site_recovery_protection_container_mappings : k => v.automatic_update if v.automatic_update != null && length(v.automatic_update) > 0 }
+  value       = { for k, v in azurerm_site_recovery_protection_container_mapping.site_recovery_protection_container_mappings : k => one(v.automatic_update) if v.automatic_update != null && length(v.automatic_update) > 0 }
 }
 output "site_recovery_protection_container_mappings_name" {
   description = "Map of name values across all site_recovery_protection_container_mappings, keyed the same as var.site_recovery_protection_container_mappings"
